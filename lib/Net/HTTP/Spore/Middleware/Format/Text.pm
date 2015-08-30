@@ -24,6 +24,6 @@ B<Accept> header in your request. If the request method is PUT or
 POST, the B<Content-Type> header will also be set to C<text/plain>.
 
 It is intended for use with L<Net::HTTP::Spore>; see their
-documentation for more information. This particular module is intended
-as a stopgap while we wait for this to get merged into the main
-Net::HTTP::Spore repository.
+documentation for more information. This particular module may be
+deleted if it eventually gets merged into the main Net:HTTP::Spore
+module.

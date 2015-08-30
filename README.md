@@ -19,9 +19,9 @@ requests in `text/plain` format. It will set the appropriate
 POST, the **Content-Type** header will also be set to `text/plain`.
 
 It is intended for use with [Net::HTTP::Spore](https://metacpan.org/pod/Net::HTTP::Spore); see their
-documentation for more information. This particular module is intended
-as a stopgap while we wait for this to get merged into the main
-Net::HTTP::Spore repository.
+documentation for more information. This particular module may be
+deleted if it eventually gets merged into the main Net:HTTP::Spore
+module.
 
 # BUGS
 
