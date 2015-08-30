@@ -1,15 +1,29 @@
 package Net::HTTP::Spore::Middleware::Format::Text;
 
-# ABSTRACT:
-use strict;
-use warnings;
+# ABSTRACT: middleware for Text format
+use Moose;
+extends 'Net::HTTP::Spore::Middleware::Format';
 
-=for markdown [![Build Status](https://travis-ci.org/gempesaw/Net-HTTP-Spore-Middleware-Format-Text.svg?branch=master)](https://travis-ci.org/gempesaw/Net-HTTP-Spore-Middleware-Format-Text)
+sub encode       { $_[1] }
+sub decode       { $_[1] }
+sub accept_type  { ( 'Accept' => 'text/plain' ) }
+sub content_type { ( 'Content-Type' => 'text/plain' ) }
+
+1;
 
 =head1 SYNOPSIS
 
+    my $client = Net::HTTP::Spore->new_from_spec('twitter.json');
+    $client->enable('Format::Text');
+
 =head1 DESCRIPTION
 
-=cut
+Net::HTTP::Spore::Middleware::Format::Text is a middleware to handle
+requests in C<text/plain> format. It will set the appropriate
+B<Accept> header in your request. If the request method is PUT or
+POST, the B<Content-Type> header will also be set to C<text/plain>.
 
-1;
+It is intended for use with L<Net::HTTP::Spore>; see their
+documentation for more information. This particular module is intended
+as a stopgap while we wait for this to get merged into the main
+Net::HTTP::Spore repository.
